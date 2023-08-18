@@ -21,6 +21,9 @@ describe('Account Creation', () => {
    
     });
   });
+  
+  const username = ('Name');
+const password = ('B7474ic');
   describe('Login Test', () => {
     before(() => {
       cy.setGlobalCredentials('Name', 'B7474ic');
@@ -29,12 +32,10 @@ describe('Account Creation', () => {
     it('should log in', () => {
       cy.visit('https://automationteststore.com/index.php?rt=account/login');
   
-      // Use the global credentials to log in
-      cy.get('#loginFrm_loginname').type('Name');
-      cy.get('#loginFrm_password').type('B7474ic');
+      cy.get('#loginFrm_loginname').type('username');
+      cy.get('#loginFrm_password').type('password');
       cy.get('#loginFrm > fieldset > .btn').click();
   
-      // Perform assertions to verify successful login
-      // ...
+      
     });
   });
